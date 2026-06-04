@@ -1,0 +1,429 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", Arial, sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #fff8fb;
+    color: #2b2430;
+}
+
+section,
+footer {
+    scroll-margin-top: 120px;
+}
+
+/* Navigation */
+.navbar {
+    position: fixed;
+    top: 18px;
+    left: 50%;
+    z-index: 100;
+    width: min(1120px, calc(100% - 32px));
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    padding: 12px 18px 12px 22px;
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.35);
+    box-shadow: 0 18px 45px rgba(122, 28, 78, 0.15);
+    backdrop-filter: blur(16px);
+    opacity: 0;
+    pointer-events: none;
+    transform: translate(-50%, -22px);
+    transition: opacity 0.35s ease, transform 0.35s ease;
+}
+
+.navbar.visible {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translate(-50%, 0);
+}
+
+.brand {
+    color: #8a1648;
+    font-size: 1.2rem;
+    font-weight: 800;
+    letter-spacing: 0.03em;
+    text-decoration: none;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.nav-links a {
+    color: #4b2d3b;
+    text-decoration: none;
+    font-weight: 650;
+    padding: 9px 14px;
+    border-radius: 999px;
+    transition: background 0.25s ease, color 0.25s ease;
+}
+
+.nav-links a:hover {
+    color: #ffffff;
+    background: #c02f69;
+}
+
+.nav-note {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    color: #8a1648;
+    line-height: 1.2;
+}
+
+.nav-note span {
+    font-size: 0.88rem;
+    font-weight: 800;
+}
+
+.nav-note small {
+    color: #6f5662;
+    font-size: 0.72rem;
+}
+
+/* Hero Section */
+.hero {
+    position: relative;
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 290px;
+    align-items: center;
+    gap: 48px;
+    overflow: hidden;
+    padding: 120px 10%;
+    color: white;
+    background:
+        linear-gradient(rgba(85, 10, 48, 0.55), rgba(85, 10, 48, 0.55)),
+        url("https://images.unsplash.com/photo-1573164713988-8665fc963095?w=1600") center/cover;
+}
+
+.hero::after {
+    content: "";
+    position: absolute;
+    right: -130px;
+    bottom: -120px;
+    width: 380px;
+    height: 380px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.18);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 760px;
+}
+
+.eyebrow {
+    display: inline-block;
+    margin-bottom: 18px;
+    padding: 8px 16px;
+    border: 1px solid rgba(255, 255, 255, 0.45);
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.16);
+    font-size: 0.86rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.hero h1 {
+    max-width: 720px;
+    margin-bottom: 20px;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(3rem, 7vw, 6.2rem);
+    line-height: 0.95;
+}
+
+.hero p {
+    max-width: 680px;
+    margin-bottom: 30px;
+    color: #fff1f7;
+    font-size: 1.25rem;
+    line-height: 1.7;
+}
+
+.hero-card {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    gap: 12px;
+    padding: 28px;
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.18);
+    box-shadow: 0 28px 70px rgba(43, 12, 31, 0.25);
+    backdrop-filter: blur(12px);
+}
+
+.hero-card strong {
+    font-size: 3.2rem;
+    line-height: 1;
+}
+
+.hero-card span {
+    color: #fff4f8;
+    line-height: 1.6;
+}
+
+.btn {
+    display: inline-block;
+    text-decoration: none;
+    background: white;
+    color: #c02f69;
+    padding: 13px 28px;
+    border-radius: 30px;
+    font-weight: 800;
+    box-shadow: 0 14px 30px rgba(70, 7, 35, 0.22);
+    transition: transform 0.25s ease, background 0.25s ease, color 0.25s ease;
+}
+
+.btn:hover {
+    background: #2b2430;
+    color: white;
+    transform: translateY(-2px);
+}
+
+/* About Section */
+.about {
+    padding: 80px 10%;
+}
+
+.about h2,
+.programs h2 {
+    margin-bottom: 36px;
+    color: #c02f69;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 2.4rem;
+    text-align: center;
+}
+
+.content {
+    display: flex;
+    gap: 42px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.content img {
+    width: 470px;
+    max-width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 24px 55px rgba(77, 30, 54, 0.22);
+}
+
+.text {
+    flex: 1;
+    min-width: 280px;
+}
+
+.text p {
+    margin-bottom: 16px;
+    color: #564652;
+    font-size: 1.04rem;
+    line-height: 1.85;
+}
+
+.text button {
+    padding: 13px 26px;
+    border: none;
+    background: #c02f69;
+    color: white;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 750;
+    transition: transform 0.25s ease, background 0.25s ease;
+}
+
+.text button:hover {
+    background: #8a1648;
+    transform: translateY(-2px);
+}
+
+/* Empowerment Section */
+.empowerment {
+    padding: 90px 10%;
+    background: linear-gradient(135deg, #fff 0%, #ffe8f1 100%);
+}
+
+.section-heading {
+    max-width: 760px;
+    margin: 0 auto 44px;
+    text-align: center;
+}
+
+.section-heading span {
+    color: #c02f69;
+    font-size: 0.88rem;
+    font-weight: 850;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+
+.section-heading h2 {
+    margin: 14px 0 16px;
+    color: #2b2430;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(2rem, 4vw, 3.4rem);
+}
+
+.section-heading p {
+    color: #62505c;
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+.empower-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+}
+
+.empower-card {
+    padding: 30px;
+    border: 1px solid #f3bfd4;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.75);
+    box-shadow: 0 18px 45px rgba(140, 34, 80, 0.12);
+}
+
+.empower-card h3 {
+    margin-bottom: 14px;
+    color: #8a1648;
+    font-size: 1.3rem;
+}
+
+.empower-card p {
+    color: #5c4a56;
+    line-height: 1.75;
+}
+
+/* Programs Section */
+.programs {
+    display: grid;
+    grid-template-columns: minmax(0, 0.8fr) minmax(280px, 1fr);
+    gap: 42px;
+    align-items: center;
+    padding: 80px 10%;
+    background: #ffffff;
+}
+
+.programs h2 {
+    margin-bottom: 16px;
+    text-align: left;
+}
+
+.programs p {
+    color: #62505c;
+    line-height: 1.8;
+}
+
+.programs ul {
+    display: grid;
+    gap: 14px;
+    list-style: none;
+}
+
+.programs li {
+    padding: 18px 22px;
+    border-left: 5px solid #c02f69;
+    border-radius: 8px;
+    background: #fff4f8;
+    color: #4b2d3b;
+    font-weight: 700;
+}
+
+/* Footer */
+footer {
+    background: #2b2430;
+    color: white;
+    text-align: center;
+    padding: 42px 20px;
+}
+
+footer h2 {
+    margin-bottom: 10px;
+    font-family: Georgia, "Times New Roman", serif;
+}
+
+footer p {
+    margin-top: 8px;
+    color: #f7dce8;
+}
+
+/* Responsive Design */
+@media (max-width: 900px) {
+    .navbar {
+        align-items: flex-start;
+        border-radius: 26px;
+    }
+
+    .nav-note {
+        display: none;
+    }
+
+    .hero,
+    .programs {
+        grid-template-columns: 1fr;
+    }
+
+    .empower-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 640px) {
+    .navbar {
+        top: 12px;
+        width: calc(100% - 20px);
+        padding: 12px;
+    }
+
+    .brand {
+        font-size: 1rem;
+    }
+
+    .nav-links {
+        flex-wrap: wrap;
+        justify-content: flex-end;
+        gap: 4px;
+    }
+
+    .nav-links a {
+        padding: 7px 9px;
+        font-size: 0.84rem;
+    }
+
+    .hero {
+        min-height: 92vh;
+        padding: 96px 7% 70px;
+    }
+
+    .hero p {
+        font-size: 1.05rem;
+    }
+
+    .about,
+    .empowerment,
+    .programs {
+        padding: 60px 7%;
+    }
+
+    .content {
+        text-align: center;
+    }
+}

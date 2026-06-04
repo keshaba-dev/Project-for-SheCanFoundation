@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>She Can Foundation</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <a href="#" class="brand">She Can</a>
+
+        <div class="nav-links">
+            <a href="#about">About</a>
+            <a href="#empowerment">Empowerment</a>
+            <a href="#programs">Programs</a>
+            <a href="#contact">Contact</a>
+        </div>
+
+        <div class="nav-note">
+            <span>Building confident futures</span>
+            <small>For every woman and girl</small>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="hero-content">
+            <span class="eyebrow">Education. Dignity. Opportunity.</span>
+            <h1>She Can Foundation</h1>
+            <p>Empowering women through learning, skill-building, mentorship, and access to opportunities that help them lead with courage.</p>
+            <a href="#about" class="btn">Learn More</a>
+        </div>
+
+        <div class="hero-card">
+            <strong>1,000+</strong>
+            <span>women supported through community programs, training, and guidance.</span>
+        </div>
+    </header>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <h2>About Us</h2>
+        <div class="content">
+            <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=800"
+                 alt="Women Empowerment">
+
+            <div class="text">
+                <p>
+                    She Can Foundation is a non-profit organization dedicated
+                    to empowering women and girls through education, skill
+                    development, mentorship, and equal opportunities.
+                </p>
+
+                <p>
+                    We believe every woman deserves the chance to achieve her
+                    dreams and contribute confidently to society.
+                </p>
+
+                <button>Join Our Mission</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Women Empowerment Section -->
+    <section id="empowerment" class="empowerment">
+        <div class="section-heading">
+            <span>Women Empowerment</span>
+            <h2>When a woman rises, communities rise with her.</h2>
+            <p>
+                Empowerment is more than support. It is the power to make choices,
+                speak with confidence, earn with dignity, and build a future without fear.
+            </p>
+        </div>
+
+        <div class="empower-grid">
+            <article class="empower-card">
+                <h3>Education First</h3>
+                <p>
+                    We help girls and women continue learning through awareness,
+                    scholarships, digital literacy, and community-driven guidance.
+                </p>
+            </article>
+
+            <article class="empower-card">
+                <h3>Skills For Independence</h3>
+                <p>
+                    Practical training in communication, entrepreneurship, technology,
+                    and employability helps women become financially independent.
+                </p>
+            </article>
+
+            <article class="empower-card">
+                <h3>Mentorship & Confidence</h3>
+                <p>
+                    Mentors create safe spaces where women can ask questions,
+                    discover strengths, and prepare for leadership in everyday life.
+                </p>
+            </article>
+        </div>
+    </section>
+
+    <!-- Programs Section -->
+    <section id="programs" class="programs">
+        <div>
+            <h2>Our Focus Areas</h2>
+            <p>
+                We work with communities to create pathways that are practical,
+                respectful, and long lasting.
+            </p>
+        </div>
+
+        <ul>
+            <li>Career readiness workshops</li>
+            <li>Health and safety awareness</li>
+            <li>Leadership circles for young girls</li>
+            <li>Small business and financial literacy support</li>
+        </ul>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <h2>She Can Foundation</h2>
+        <p>Contact us to volunteer, mentor, donate, or collaborate with our mission.</p>
+        <p>&copy; 2026 She Can Foundation | Together We Can Make a Difference</p>
+    </footer>
+
+    <script>
+        const navbar = document.getElementById('navbar');
+
+        function updateNavbar() {
+            if (window.scrollY > 80) {
+                navbar.classList.add('visible');
+            } else {
+                navbar.classList.remove('visible');
+            }
+        }
+
+        window.addEventListener('scroll', updateNavbar);
+        updateNavbar();
+    </script>
+
+</body>
+</html>
